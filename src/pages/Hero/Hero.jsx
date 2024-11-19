@@ -7,19 +7,24 @@ export default function Hero() {
     <div>
       
         {/* Black overlay with 50% opacity */}
-        <div className="absolute inset-0 mt-[10%] lg:mt-[2.5%] h-screen bg-black opacity-50"></div>
+        <div className="absolute inset-0 h-[110vh] lg:h-[115vh] bg-black opacity-50"></div>
 
         {/* Content container */}
         <div
   className="relative z-10 flex flex-col items-center justify-center mt-10 mx-auto w-[90%] min-h-screen sm:p-5 my-auto lg:w-[80%]"
 >
   {/* Heading */}
-  <h1 data-aos="fade-up"  className="my-2 font-extrabold text-white font-poppins text-[30px] lg:text-[50px]">
-    Zeko Consultancy
-  </h1>
+  <span data-aos="fade-up" className='text-2xl font-extrabold text-white font-poppins'>Welcome To</span>
+  <h1
+  data-aos="fade-up"
+  className="my-2 font-extrabold text-transparent font-poppins text-[30px] lg:text-[80px] bg-gradient-to-r from-primary to-[#d5ce82] bg-clip-text"
+>
+  Zeko Consultancy
+</h1>
+
 
   {/* Subheading */}
-  <p data-aos="fade-up"  className="my-4 text-sm text-center text-white sm:text-base md:text-lg font-poppins">
+  <p data-aos="fade-up"  className="my-4 text-sm text-center text-gray-300 sm:text-base md:text-lg font-poppins">
   Discover prime spaces, expert manpower solutions, and top-tier education consultancy services today.
   </p>
 
@@ -37,7 +42,7 @@ export default function Hero() {
         <h2 className="text-lg font-bold text-white font-poppins">
           {item.title}
         </h2>
-        <p className="text-sm text-center text-white sm:text-base font-poppins">
+        <p className="text-sm text-center text-gray-300 sm:text-base font-poppins">
           {item.desc}
         </p>
       </div>

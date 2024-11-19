@@ -1,8 +1,4 @@
-import UOG from "../assets/university/UOG.jpg"
-import TSU from "../assets/university/TSU.png"
-import SEU from "../assets/university/SEU.png"
-import ISU from "../assets/university/ISU.png"
-import TSMU from "../assets/university/TSMU.webp"
+
 
 export const universities=[
     {
@@ -284,4 +280,48 @@ export const nav=[
     path:"/Work"}, {
         id:4,
         name:'Rental Space',
-    path:"/Rental"}]
+    path:"/Rental"},
+  {
+    id:5,
+    name:"Contact Us",
+    path:"/contact"
+  }]
+
+export const univguide=[
+  {
+    id:1,
+    title:"Application Guidance",
+    desc:"We assist with every part of your application, including personal statement writing, CVs, recommendation letters, and interviews. Our goal is to help you present the best version of yourself to your prospective universities.",
+    image:"https://res.cloudinary.com/deaafsb0j/image/upload/v1732032827/14944_ekwjl5.jpg"
+  },
+  {
+    id:2,
+    title:"Visa Consultation",
+    desc:"Navigating visa processes can be complex. Our team is here to guide you through the application process for student visas, ensuring that your documents are in order and deadlines are met.",
+    image:"https://res.cloudinary.com/deaafsb0j/image/upload/v1732032827/16871_jvxpqz.jpg"
+  },
+  {
+    id:3,
+    title:"Career Counseling",
+    desc:"In addition to academic advising, we provide career counseling to help students plan for their professional futures. Our experts can assist with internships, career pathways, and job placements after graduation.",
+    image:"https://res.cloudinary.com/deaafsb0j/image/upload/v1732032827/2149080808_su4s3l.jpg"
+  }
+]
+
+export const whychooseus = [
+  {
+    id: 1,
+    title: "Global Recruitment Expertise",
+    text: "Our extensive network and expertise in international recruitment make us your ideal partner for sourcing and placing top talent worldwide."
+  },
+  {
+    id: 2,
+    title: "End-to-End Recruitment Support",
+    text: "From talent sourcing and recruitment to onboarding and relocation, we provide comprehensive support throughout the entire hiring process."
+  },
+  {
+    id: 3,
+    title: "Compliance and Peace of Mind",
+    text: "We ensure that all international hires meet the legal and regulatory requirements, providing you with peace of mind as you expand globally."
+  }
+];

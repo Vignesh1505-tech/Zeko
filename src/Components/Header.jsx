@@ -6,12 +6,21 @@ import { nav } from '../constants';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('Home'); // Default selected is "Home"
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     // Set active item based on current path
     const currentPath = window.location.pathname;
-    const activeItem = nav.find(item => item.path === currentPath)?.name || 'Home';
+    const activeItem = nav.find((item) => item.path === currentPath)?.name || 'Home';
     setActiveNav(activeItem);
+
+    // Add scroll listener
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -24,7 +33,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 flex items-center justify-center w-full bg-white lg:h-16 md:h-16 dark:bg-black">
+    <nav
+      className={`fixed z-50 flex items-center justify-center w-full transition-all duration-300 ${
+        isScrolled ? 'bg-white/50 dark:bg-black/50 backdrop-blur-md' : 'bg-white dark:bg-black'
+      } lg:h-16 md:h-16`}
+    >
       <div className="container flex items-center justify-between px-4 mx-auto">
         {/* Logo */}
         <div>
@@ -82,7 +95,11 @@ const Navbar = () => {
                 href={item.path}
                 onClick={() => handleNavClick(item.name)}
                 className={`relative px-4 py-2 text-lg transition-transform duration-500 transform font-poppins 
-                  ${activeNav === item.name ? 'text-white dark:text-white' : 'text-black dark:text-white'} 
+                  ${
+                    activeNav === item.name
+                      ? 'text-white dark:text-white'
+                      : 'text-black dark:text-white'
+                  } 
                   group-hover:scale-110 group-hover:text-white dark:group-hover:text-black`}
               >
                 {item.name}
@@ -106,7 +123,11 @@ const Navbar = () => {
                   href={item.path}
                   onClick={() => handleNavClick(item.name)}
                   className={`px-4 py-2 text-lg font-poppins 
-                    ${activeNav === item.name ? 'text-primary dark:text-primary' : 'text-black dark:text-white'}`}
+                    ${
+                      activeNav === item.name
+                        ? 'text-primary dark:text-primary'
+                        : 'text-black dark:text-white'
+                    }`}
                 >
                   {item.name}
                 </a>

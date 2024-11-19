@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function InquiryBtn({ hero }) {
+export default function ChooseYour({ hero }) {
   const scrollToContact = () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('univ').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -17,7 +17,7 @@ export default function InquiryBtn({ hero }) {
 
       {/* Button Text */}
       <p className={`text-lg font-medium text-center relative z-10 ${hero ? 'text-white' : 'text-black'} dark:text-white`}>
-        Inquiry
+      Pick Your Path
       </p>
     </div>
   );

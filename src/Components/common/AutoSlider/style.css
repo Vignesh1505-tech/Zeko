@@ -1,0 +1,15 @@
+@keyframes marquee {
+    0% {
+      transform: translateX(0); /* Start from the beginning */
+    }
+    100% {
+      transform: translateX(-50%); /* Move by half the width of the items */
+    }
+  }
+  
+  .animate-marquee {
+    display: flex;
+    animation: marquee 30s linear infinite; /* Adjust the speed here */
+    width: 200%; /* Ensure the width accommodates both the original and duplicated items */
+  }
+  

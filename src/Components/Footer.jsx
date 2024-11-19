@@ -6,6 +6,7 @@ const Footer = () => {
       <div className="container grid grid-cols-1 gap-8 px-4 mx-auto md:grid-cols-3">
         {/* Solutions Section */}
         <div>
+          
           <h3 className="mb-4 text-xl font-bold">Solutions</h3>
           <p className="mb-4">
           Your partner in rental spaces, manpower, and education consultancy.          </p>
@@ -14,7 +15,7 @@ const Footer = () => {
             <a href="#" aria-label="Facebook">
               <i className="fab fa-facebook fa-lg hover:text-gray-300 dark:hover:text-gray-600"></i>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/zeko.ge/?igsh=YXF4cm50MmlqOXV2#" aria-label="Instagram">
               <i className="fab fa-instagram fa-lg hover:text-gray-300 dark:hover:text-gray-600"></i>
             </a>
             <a href="#" aria-label="TikTok">

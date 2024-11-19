@@ -53,6 +53,7 @@ import "../../../assets/styles/university.css";
 import { useNavigate } from 'react-router-dom';
 import { Tilt } from 'react-tilt';
 import { universities } from '../../../constants';
+import SectionWrapper from '../../../hoc/SectionWrapper';
 
 const defaultOptions = {
 	reverse:        false,  // reverse the tilt direction
@@ -66,7 +67,7 @@ const defaultOptions = {
 	easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
 }
 
-export default function University() {
+const University=()=> {
     const [clickedItem, setClickedItem] = useState(null);
 
 const navigation=useNavigate()
@@ -79,7 +80,7 @@ const navigation=useNavigate()
 
   return (
 
-<div className="flex flex-col relative mt-[5%] h-[100vh] items-center">
+<div className="flex flex-col relative mt-[5%] h-auto items-center">
   <div data-aos="fade-up"  className="my-5">
     <h1  className="text-center text-black dark:text-white font-poppins font-bold md:text-[30px] lg:text-[50px]">Your Gateway to Top Universities Worldwide</h1>
   </div>
@@ -93,11 +94,14 @@ const navigation=useNavigate()
           id={`item-${item.id}`}
           className="flex flex-col items-center justify-center w-auto mb-10 transition-transform transform rounded-md cursor-pointer fade-item bg-opacity-20 dark:bg-opacity-20 backdrop-blur-md hover:scale-105"
         >
+          <figure>
           <img
+          loading="lazy"
             src={item.image}
             className="lg:w-[150px] lg:h-[150px] w-[120px] h-[120px] rounded-sm lg:mx-4 mx-2 transition-transform transform hover:scale-[1.2] hover:rotate-3 hover:translate-z-[10px] duration-500"
             alt={`${item.name} logo`}
           />
+          </figure>
         </div>
       </Tilt>
     ))}
@@ -106,3 +110,4 @@ const navigation=useNavigate()
 
   );
 }
+export default SectionWrapper(University, "univ");

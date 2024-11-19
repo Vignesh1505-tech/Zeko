@@ -20,7 +20,7 @@
 //     </div>
 //   )
 // }
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../../assets/styles/UnivDetails.css'; // Custom CSS file for animations and styling
 import { Tilt } from 'react-tilt';
@@ -41,6 +41,10 @@ const defaultOptions = {
 export default function UnivDetails() {
   const location = useLocation();
   const Data = location.state;
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div  style={{
@@ -49,8 +53,9 @@ export default function UnivDetails() {
       }} className="relative flex flex-col items-center lg:mt-0 mt-[20%] justify-center lg:flex-row univ-details-container">
       <div className="relative z-10 flex flex-col items-center gap-5 lg:gap-10 lg:flex-row content-container justify-evenly">
       <Tilt options={defaultOptions} style={{ height: 400, width: 400 }} >
-
-        <img src={Data.image} className="lg:w-[400px] w-[300px] h-[300px] lg:h-[400px] lg:mx-5 mx-auto p-2 bg-white rounded" alt={`${Data.name} logo`} />
+<figure>
+        <img loading="lazy" src={Data.image} className="lg:w-[400px] w-[300px] h-[300px] lg:h-[400px] lg:mx-5 mx-auto p-2 bg-white rounded" alt={`${Data.name} logo`} />
+        </figure>
         </Tilt>
 
         <div className="flex flex-col items-center justify-center text-center text-container">

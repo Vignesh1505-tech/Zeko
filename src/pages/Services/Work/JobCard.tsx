@@ -1,5 +1,6 @@
 import React from "react";
 import { jobsByCountry } from "../../../constants";
+import InquiryBtn from "../../../Components/common/InquiryBtn/InquiryBtn";
 
 
 
@@ -31,16 +32,19 @@ const JobCard = () => {
                   <div className="flex items-center justify-between p-4">
                     {/* Job Title */}
                     <div className="w-[70%]">
-                    <h3 data-aos="fade-up"  className="mb-2 text-xl font-semibold text-gray-900">{job.title}</h3>
+                    <h3 data-aos="fade-right"  className="mb-2 text-xl font-semibold text-gray-900">{job.title}</h3>
 
                     {job.salary && (
-                      <p data-aos="fade-up"  className="text-sm font-medium text-gray-600">
+                      <p data-aos="fade-right"  className="text-sm font-medium text-gray-600">
                         <strong>Salary:</strong> {job.salary}
                       </p>
                     )}
                     </div>
-                    <div data-aos="fade-up"  className={` w-[30%] p-2 cursor-pointer  border-2 my-6 rounded-xl`} onClick={scrollToContact} >
+                    {/* <div data-aos="fade-up"  className={` w-[30%] p-2 cursor-pointer  border-2 my-6 rounded-xl`} onClick={scrollToContact} >
 <p className={`text-lg font-medium text-center text-black`}>Inquiry</p>
+</div> */}
+<div className="w-[30%]">
+<InquiryBtn hero={false}/>
 </div>
                   </div>
                 </div>
